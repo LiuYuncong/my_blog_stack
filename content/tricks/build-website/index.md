@@ -3,7 +3,7 @@ title: "记一次硬核又优雅的个人学术主页建站之旅"
 date: 2026-03-09
 draft: false
 tags: ["建站", "Hugo", "Docker", "自动化", "折腾日记"]
-categories: ["经验总结"]
+categories: ["tricks"]
 summary: "从零开始在云服务器上搭建全套自动化静态博客系统。记录了基于 CasaOS、Nginx Proxy Manager 和 Hugo 的完整工具流，以及踩过的那些坑。"
 ---
 
