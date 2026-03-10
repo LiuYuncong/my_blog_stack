@@ -1,24 +1,22 @@
-# Configure main menu and social menu
-#[[main]]
-#identifier = "home"
-#name = "Home"
-#url = "/"
-#[main.params]
-#icon = "home"
-#newtab = true
+# --- 主导航菜单 (显示在侧边栏上方) ---
+
+
+
+
+# --- 社交链接菜单 (显示在侧边栏底部图标区) ---
 
 [[social]]
     identifier = "github"
     name       = "GitHub"
-    url        = "https://github.com/CaiJimmy/hugo-theme-stack"
+    url        = "https://github.com/Binl3wis" # 请在此处填入你的真实链接
 
     [social.params]
-        icon = "brand-github"
+        icon = "brand-github" # GitHub 图标
 
 [[social]]
-    identifier = "twitter"
-    name       = "Twitter"
-    url        = "https://twitter.com"
+    identifier = "email"
+    name       = "Email"
+    url        = "mailto:15091758390@163.com" # 已为你填入之前的常用邮箱
 
     [social.params]
-        icon = "brand-twitter"
+        icon = "mail"         # 邮件图标

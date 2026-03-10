@@ -1,26 +1,42 @@
-# Markdown renderer configuration
+# --- Markdown 渲染器配置 (Goldmark) ---
 [goldmark.renderer]
+    # 允许在 Markdown 中直接编写原始 HTML
+    # 设为 true 才能支持像 <center> 居中图片或自定义 iframe 这种高级排版
     unsafe = true
 
 [goldmark.extensions.passthrough]
+    # 开启数学公式 (LaTeX) 解析支持
     enable = true
 
-    # LaTeX math support
-    # https://gohugo.io/content-management/mathematics/
+    # 设置公式定界符（让 Hugo 知道哪些字符包裹的内容是公式）
     [goldmark.extensions.passthrough.delimiters]
+        # 块状公式：使用 \[...\] 或 $$...$$ 包裹，单独成行显示
         block  = [['\[', '\]'], ['$$', '$$']]
+        # 行内公式：使用 \(...\) 包裹，嵌入在文字中间显示
         inline = [['\(', '\)']]
 
+# --- 文章目录 (TOC) 配置 ---
 [tableOfContents]
+    # 目录显示的标题深度（显示到 #### H4）
     endLevel   = 4
+    # 目录标题是否带编号
     ordered    = true
+    # 目录从哪级标题开始抓取（2级标题即 ## H2，通常忽略文章的大标题 H1）
     startLevel = 2
 
+# --- 代码高亮配置 ---
 [highlight]
+    # 是否生成行内样式类（不使用外部 CSS 类）
     noClasses          = false
-    codeFences         = true
+    # 开启代码围栏（支持 ``` 语法）
+    codeFences          = true
+    # 自动尝试猜测代码语言（如果未注明语言类型）
     guessSyntax        = true
+    # 代码行号从 1 开始
     lineNoStart        = 1
+    # 是否显示行号（强烈建议开启，方便技术交流）
     lineNos            = true
+    # 行号是否显示在表格中（保持整洁）
     lineNumbersInTable = true
-    tabWidth           = 4
+    # 缩进宽度（4个空格）
+    tabWidth            = 4

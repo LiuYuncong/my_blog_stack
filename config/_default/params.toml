@@ -1,57 +1,69 @@
-# Pages placed under these sections will be shown on homepage and archive page.
-mainSections = ["post"]
-# Output page's full content in RSS.
+# --- 页面显示设置 ---
+# 出现在首页和归档页面的内容板块
+# 如果你新建了 content/projects 文件夹，可以改为 ["post"c]
+mainSections = ["posts" ,"projects","tricks"]
+
+# 在 RSS 订阅源中输出全文
 rssFullContent = true
-favicon        = "img/favicon.png"
 
-# Accepted values: "default", "lastmod"
-# default = see https://gohugo.io/quick-reference/glossary/#default-sort-order
-# lastmod = sort by last modified date, in descending order
-SortBy              = "default"
+# 网站图标路径（文件需放在 static/img/favicon.png）
+favicon = "img/favicon.png"
 
+# 文章排序方式
+# "default" = 默认排序（通常按日期）
+# "lastmod" = 按最后修改日期排序
+SortBy = "default"
+
+# --- 页脚设置 ---
 [footer]
-    since      = 2020
-    customText = ""
+    since      = 2026          # 网站开始运行的年份
+    customText = "小葱的学术基站" # 页脚显示的自定义文本
 
+# --- 日期格式 ---
 [dateFormat]
-    published   = ":date_full"
-    lastUpdated = ":date_full"
+    published   = "2006-01-02" # 文章发布日期的显示格式
+    lastUpdated = "2006-01-02" # 最后更新日期的显示格式
 
+# --- 侧边栏设置 (左侧名片) ---
 [sidebar]
-    emoji    = "🍥"
-    subtitle = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    avatar   = "img/avatar.png"
+    emoji    = "🍥"             # 头像上方的表情
+    subtitle = "这里是我的学术自留地。记录研究历程、项目进展与生活随想。" # 个人简介
+    avatar   = "img/avatar.jpg"    # 头像路径（文件需放在 static/avatar.jpg）
 
+# --- 文章内容页设置 ---
 [article]
-    headingAnchor = false
-    math          = false
-    readingTime   = true
+    headingAnchor = true       # 是否在标题旁显示锚点链接
+    math          = false      # 是否开启数学公式支持 (LaTeX)
+    readingTime   = true       # 是否显示预计阅读时间
 
+    # 文章授权协议设置
     [article.license]
         enabled = true
         default = "Licensed under CC BY-NC-SA 4.0"
 
+# --- 侧边栏小组件 (右侧/底部显示) ---
 [widgets]
+    # 首页显示的小组件
     homepage = [
-        { type = "search" },
-        { type = "archives", params = { limit = 5 } },
-        { type = "categories", params = { limit = 10 } },
-        { type = "tag-cloud", params = { limit = 10 } },
+        { type = "search" },                     # 搜索框
+        { type = "archives", params = { limit = 5 } }, # 最近归档（显示5条）
+        { type = "categories", params = { limit = 10 } }, # 分类云
+        #{ type = "tag-cloud", params = { limit = 10 } },  # 标签云
     ]
-    page = [{ type = "toc" }]
+    # 文章内页显示的小组件
+    page = [{ type = "toc" }] # 显示文章目录 (Table of Contents)
 
+# --- 社交卡片 (用于 Twitter/X 分享预览) ---
 [opengraph.twitter]
     site = ""
     card = "summary_large_image"
 
+# --- 配色方案 ---
 [colorScheme]
-    toggle  = true
-    default = "auto"
+    toggle  = true    # 是否允许用户手动切换亮/暗模式
+    default = "auto"  # 默认模式："auto" (跟随系统), "light" (亮色), "dark" (暗色)
 
-## Comments
+# --- 评论系统 ---
 [comments]
-    enabled  = true
+    enabled  = false  # 暂时关闭评论，备案期间建议设为 false
     provider = "disqus"
-
-    # See all the available configurations at https://github.com/CaiJimmy/hugo-theme-stack/blob/master/config/_default/params.toml
-    # Copy the configurations you need from there and paste it here.
