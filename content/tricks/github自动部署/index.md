@@ -1,7 +1,8 @@
 ---
 title: "Github自动部署"
 description: "告别手动上传 public 文件夹，记录如何使用 GitHub Actions 实现 Hugo 博客到云服务器的自动化部署工作流。"
-date: 2026-03-10T15:16:44+08:00
+date: 2026-03-10
+categories: ["经验总结"]
 image: 
 math: 
 license: 
