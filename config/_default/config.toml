@@ -1,5 +1,5 @@
 # 部署前的基础路径修改
-baseurl      = "xiaocong.site"
+baseurl      = "https://xiaocong.site/"
 languageCode = "zh-cn"
 title        = "小葱的学术基站"
 timeZone = "Asia/Shanghai"
